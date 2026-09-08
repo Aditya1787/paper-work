@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:1120px;
+    height:1600px;
+
+    background-image:url("couple.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,0.30);
+}
+
+.note{
+    position:absolute;
+    inset:0;
+
+    z-index:2;
+
+    color:white;
+
+    font-family:'Caveat', cursive;
+
+    padding:40px;
+
+    text-shadow:
+    0 0 4px rgba(0,0,0,0.9),
+    0 0 10px rgba(0,0,0,0.9);
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:30px;
+}
+
+p{
+    font-size:42px;
+    line-height:1.3;
+    margin-bottom:25px;
+    max-width:600px;
+}
+
+.ending{
+    margin-top:50px;
+    font-size:50px;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:50px;
+}
+
+.container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 40%,
+        rgba(255,0,100,0.15) 100%
+    );
+
+    pointer-events:none;
+}
+
+.hearts{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.heart{
+    position:absolute;
+    bottom:-50px;
+    color:rgba(255,255,255,0.9);
+    animation:floatUp linear infinite;
+    user-select:none;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(0.5);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-1800px) scale(1.5);
+        opacity:0;
+    }
+}
